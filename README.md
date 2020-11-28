@@ -85,7 +85,7 @@ zone "janganlupa-ta.c11.pw" {
 - Lalu ubah konfigurasi menjadi 
 ```
 @ IN NS janganlupa-ta.c11.pw.
-@ IN A 10.151.71.19 ;IP MOJOKERTO
+@ IN A 10.151.77.99 ;IP MOJOKERTO
 ```
 - Setelah itu restart bind dengan ```service bind9 restart```
 - Lalu coba mengganti proxy server browser dengan ``` janganlupa-ta.c11.pw dan port:8080 ```
