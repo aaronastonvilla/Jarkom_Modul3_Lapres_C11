@@ -28,6 +28,7 @@ Pertama, akses ke proxy hanya bisa dilakukan oleh Anri sendiri sebagai user TA. 
   acl USERS proxy_auth REQUIRED
   ```
 - Lakukan restart squid dengan perintah ```service squid restart```, dan saat membuka browser akan muncul perintah autentikasi seperti berikut:
+![gambar7](/Gambar/7.png)
 
 
 ## No 8 9, Mengakses hanya pada hari dan waktu tertentu
@@ -57,7 +58,7 @@ http_access deny REDIRSITE
 deny_info 301:http://monta.if.its.ac.id REDIRSITE
 ```
 - simpan, dan restart squid ```service squid restart```
-- 
+![gambar10](/Gambar/10.jpg)
 
 ### No 11, Mengubah error page.
 - download dulu file yang dibutuhkan dengan menggunakan perintah ```wget``` pada UML **MOJOKERTO**
@@ -67,7 +68,7 @@ deny_info 301:http://monta.if.its.ac.id REDIRSITE
 error_directory /usr/share/squid/errors/English
 ```
 - dan ketika dicoba akan menjadi:
-
+![gambar11](/Gambar/11.png)
 
 ### No 12, mengubah address proxy.
 - Pada nomor ini diharuskan mengonfigurasi BIND pada UML **MALANG**
@@ -89,3 +90,4 @@ zone "janganlupa-ta.c11.pw" {
 - Setelah itu restart bind dengan ```service bind9 restart```
 - Lalu coba mengganti proxy server browser dengan ``` janganlupa-ta.c11.pw dan port:8080 ```
 - Dan ketika mencoba akses akan keluar seperti di bawah ini:
+![gambar12](/Gambar/12.png)
