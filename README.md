@@ -81,7 +81,7 @@ zone "janganlupa-ta.c11.pw" {
 };
 ```
 - Setelah itu, buat directory jarkom dengan menggunakan ``` mkdir /etc/bind/jarkom/ ```
-- Lalu copy file cb.local folder jarkom dengan nama janganlupa-ta.c11.pw  dengan menggunakan ```cp /etc/bind/db.local /etc/bind/jarkom/janganlupa-ta.e01.pw```
+- Lalu copy file cb.local folder jarkom dengan nama janganlupa-ta.c11.pw  dengan menggunakan ```cp /etc/bind/db.local /etc/bind/jarkom/janganlupa-ta.c11.pw```
 - Lalu ubah konfigurasi menjadi 
 ```
 @ IN NS janganlupa-ta.c11.pw.
