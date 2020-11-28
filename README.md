@@ -17,7 +17,7 @@ Pertama, akses ke proxy hanya bisa dilakukan oleh Anri sendiri sebagai user TA. 
 - Lalukan restart squid dengan perintah ```service squid restart```
 - Atur proxy pada browser 
 - Pada UML **MOJOKERTO** install apache2-utils dengan perintah ```apt-get install apache2-utils```
-- Dengan perintah ```htpasswd -c /etc/squid/passwd userta_c12``` membuat user dan password.
+- Dengan perintah ```htpasswd -c /etc/squid/passwd userta_c11``` membuat user dan password.
 - Buka file konfigurasi dengan perintah ```nano /etc/squid/squid.conf``` untuk menambahkan
   ```
   auth_param basic program /usr/lib/squid/ncsa_auth /etc/squid/passwd
@@ -26,9 +26,9 @@ Pertama, akses ke proxy hanya bisa dilakukan oleh Anri sendiri sebagai user TA. 
   auth_param basic credentialsttl 2 hours
   auth_param basic casesensitive on
   acl USERS proxy_auth REQUIRED
-  http_access allow USERS
   ```
 - Lakukan restart squid dengan perintah ```service squid restart```, dan saat membuka browser akan muncul perintah autentikasi seperti berikut:
+
 
 ## No 8 9, Mengakses hanya pada hari dan waktu tertentu
 - untuk mempermudah, maka sebelumnya buat dulu file untuk konfigurasi waktu dengan menggunakan perintah ```nano /etc/squid/acl.conf``` pada UML **MOJOKERTO**
