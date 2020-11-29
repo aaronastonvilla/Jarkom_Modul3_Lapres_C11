@@ -26,8 +26,9 @@ xterm -T GRESIK -e linux ubd0=GRESIK,jarkom umid=GRESIK eth0=daemon,,,switch1 me
 xterm -T MADIUN -e linux ubd0=MADIUN,jarkom umid=MADIUN eth0=daemon,,,switch3 mem=64M &
 
 ```
+![gambar1](/Gambar/Screenshot_184.png)
 
-![gambar1](/Gambar/Screenshot_161.png)
+
 
 lalu lakukan seperti pengenalan UML yaitu
   
@@ -35,13 +36,71 @@ nano /etc/sysctl.conf (surabaya)
 uncomment net.ipv4.ip_forward=1
 sysctl -p
 
+lalu ubah interface setiap uml menjadi
+
+![gambar1](/Gambar/Screenshot_185.png)
+
+![gambar1](/Gambar/Screenshot_186.png)
+
+![gambar1](/Gambar/Screenshot_187.png)
+
+![gambar1](/Gambar/Screenshot_188.png)
+
+![gambar1](/Gambar/Screenshot_189.png)
+
+![gambar1](/Gambar/Screenshot_190.png)
+
+![gambar1](/Gambar/Screenshot_191.png)
+
+![gambar1](/Gambar/Screenshot_192.png)
 
 
-## 2
 
+## 2  Karena TUBAN jauh dari client, maka SURABAYA ditunjuk sebagai perantara (DHCP Relay) antara DHCP Server dan client.
 
+- Install DHCP di Tuban
+- Setting Config isc-dhcp-server Tuban
 
+![gambar1](/Gambar/Screenshot_193.png)
 
+- Install DHCP Relay di surabaya
+- Setting Config isc-dhcp-relay Surabaya,
+
+![gambar1](/Gambar/Screenshot_194.png)
+
+Kemudian tambahkan subnet NID_DMZ seperti berikut agar dhcp relay bisa berjalan, 
+
+![gambar1](/Gambar/Screenshot_195.png)
+
+- Kemudian ubah semua client yang awalnya static menjadi menggunakan dhcp.
+nb: ss sudah langsung masuk ke dhcp karena sudah diubah (coment)
+
+## 3 dan 4. Atur Client mendapatkan range tertentu
+```
+(3) Client pada subnet 1 mendapatkan range IP dari 192.168.0.10 sampai 192.168.0.100 dan
+192.168.0.110 sampai 192.168.0.200.
+(4) Client pada subnet 3 mendapatkan range IP dari 192.168.1.50 sampai 192.168.1.70.
+```
+
+- Ubah Config /etc/dhcp/dhcpd.conf, **Gambar :**
+
+![gambar1](/Gambar/Screenshot_196.png)
+
+## 5. Client mendapatkan DNS Malang dan DNS 202.46.129.2 dari DHCP
+- nano /etc/dhcp/dhcpd.conf pada Tuban tambahkan rangenya, **Gambar :**
+
+![gambar1](/Gambar/Screenshot_196.png)
+
+dan hasilnya
+
+![gambar1](/Gambar/Screenshot_197.png)
+
+## 6. Client di subnet 1 mendapatkan peminjaman alamat IP selama 5 menit, sedangkan subnet 3 dapat 10 menit
+- nano /etc/dhcp/dhcpd.conf pada Tuban tambahkan, **Gambar :**
+
+![gambar1](/Gambar/Screenshot_196.png)
+
+-Sudah di test waktu demo
 
 
 
