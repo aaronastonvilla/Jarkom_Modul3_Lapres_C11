@@ -27,7 +27,7 @@ xterm -T MADIUN -e linux ubd0=MADIUN,jarkom umid=MADIUN eth0=daemon,,,switch3 me
 
 ```
 
-gambar ges
+![gambar1](/Gambar/Screenshot_161.png)
 
 lalu lakukan seperti pengenalan UML yaitu
   
@@ -37,7 +37,7 @@ sysctl -p
 
 
 
-## 2 - 6 configurasi setiap UML
+## 2
 
 
 
